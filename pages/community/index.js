@@ -14,7 +14,7 @@ const CommunityPage = () => {
         />
       </Head>
       <Navbar />
-      <div className='h-[100vh] flex justify-center mb-[6800px] mt-32'>
+      <div className='h-[100vh] flex justify-center mb-[4800px] mt-32'>
         <CommunityGuidelines />
       </div>
       <Footer />
