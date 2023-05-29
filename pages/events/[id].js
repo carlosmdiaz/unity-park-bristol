@@ -18,7 +18,7 @@ const EventsById = (props) => {
   return (
     <div className='flex flex-col justify-between min-h-[100vh]'>
       <Navbar />
-      <div className='w-full h-[100vh] flex md:flex-row flex-col justify-center items-center md:pt-32 pt-28'>
+      <div className='w-full h-[100vh] flex md:flex-row flex-col justify-center items-center md:pt-32 pt-28 md:mb-0 mb-20'>
         <div className="shadow-2xl mr-5 md:w-[50%] w-[90%] md:h-[80%] h-[40%] md:pl-0 md:ml-0 ml-5">
           <Image 
             src={event.image}
