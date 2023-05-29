@@ -15,7 +15,7 @@ const SwiperSlider = (props) => {
 
   SwiperCore.use(Autoplay);
   return (
-    <section className="py-4 lg:w-full w-[95%] -z-1 flex justify-center drop-shadow-lg">
+    <section className="py-4 lg:w-full w-[75%] -z-1 flex justify-center drop-shadow-lg">
       <div className="container mx-auto">
         <Swiper
           style={{

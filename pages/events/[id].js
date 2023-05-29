@@ -19,7 +19,7 @@ const EventsById = (props) => {
     <div className='flex flex-col justify-between min-h-[100vh]'>
       <Navbar />
       <div className='w-full h-[100vh] flex md:flex-row flex-col justify-center items-center md:pt-32 pt-28'>
-        <div className="shadow-2xl mr-5 md:w-[50%] w-[90%] md:h-[80%] h-[40%] md:pl-0">
+        <div className="shadow-2xl mr-5 md:w-[50%] w-[90%] md:h-[80%] h-[40%] md:pl-0 md:ml-0 ml-5">
           <Image 
             src={event.image}
             alt={event.title}
@@ -34,7 +34,7 @@ const EventsById = (props) => {
             <h1 className="font-serif font-bold md:text-4xl text-3xl  md:pl-10 pl-5 text-[#AE895A]">{event.date}</h1>
           </div>
           <div className="md:w-[90%] w-[100%] flex justify-center mt-10">
-            <p className="font-serif font-bold text-justify text-3xl md:pl-10 pl-0">{event.description}</p>
+            <p className="font-serif font-bold text-justify text-3xl md:pl-10 pl-0 mx-10">{event.description}</p>
           </div>
         </div>
       </div>

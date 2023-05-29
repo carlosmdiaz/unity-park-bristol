@@ -12,7 +12,7 @@ const EventsPage = (props) => {
     <div className='flex flex-col justify-between min-h-[100vh]'>
       <Navbar />
       <h1 className="font-serif font-bold text-6xl md:pl-10 pl-5 pt-32">Upcoming Events</h1>
-      <div className="w-full h-[100vh] flex flex-wrap md:justify-between justify-evenly px-10 mt-10 md:mb-32 mb-[1000px]">
+      <div className="w-full h-[100vh] flex flex-wrap md:justify-between justify-evenly px-10 mt-10 md:mb-60 mb-[1000px]">
         {
           events.map(event => {
             return (

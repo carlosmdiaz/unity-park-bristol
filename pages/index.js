@@ -13,12 +13,12 @@ function HomePage(props) {
     <div className="no-scrollbar">
       <Navbar/>
       <Landing/>
-      <div className="mt-28 mb-16">
-        <Ribbon />
-      </div>
-      <h1 className="font-serif text-6xl font-bold md:pl-10 pl-5 pt-8">Events</h1>
+      <h1 className="font-serif text-6xl font-bold md:pl-10 pl-5 md:pt-20 pt-8 md:pb-10 pb-0">Events</h1>
       <div className="flex justify-center mb-28">
         <SwiperSlider events={events}/>
+      </div>
+      <div className="mt-28 mb-16">
+        <Ribbon />
       </div>
       {/* <h1 className="font-serif font-bold text-6xl mb-8 pl-10">Check Us On Instagram</h1>
       <div className="mb-10">
