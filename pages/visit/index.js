@@ -11,7 +11,7 @@ const VisitPage = (props) => {
   return (
     <div className='flex flex-col justify-between min-h-[100vh]'>
       <Navbar />
-      <div className="w-full flex flex-col justify-between mb-40">
+      <div className="w-full flex flex-col items-center justify-between mb-40 md:pl-0 pl-10">
         <h1 className="font-serif text-6xl  md:pl-10 pl-5 pt-32">Explore our Businesses</h1>
         <div className='flex flex-wrap justify-between p-5 mb-10'>
           {

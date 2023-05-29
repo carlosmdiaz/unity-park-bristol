@@ -5,7 +5,7 @@ const EventsItemsPage = (props) => {
     const {title, image, description, date} = props;
     
   return (
-    <div className="w-[300px] h-[350px] bg-slate-100 shadow-xl rounded-xl flex flex-col hover:scale-105 mt-5">
+    <div className="w-[300px] h-[350px] bg-slate-100 shadow-xl rounded-xl flex flex-col hover:scale-105 mt-5 md:mx-10">
         <div className="w-[95%] flex justify-center items-center pl-3 pt-3">
             <Image 
                 src={image}
