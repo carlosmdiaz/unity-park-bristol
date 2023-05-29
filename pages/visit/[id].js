@@ -2,11 +2,18 @@ import { getAllBusinesses, getBusinessById } from '@/helpers/api-util';
 import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
 import Image from 'next/image';
-import React, { useState } from 'react';
 import Link from 'next/link';
 
 const BusinessesById = (props) => {
     const business = props.selectBusiness;
+
+    if (!business) {
+      return (
+        <div className="center">
+          <p>Loading...</p>
+        </div>
+      );
+    }
 
   return (
     <div className='flex flex-col justify-between min-h-[100vh]'>
@@ -14,7 +21,7 @@ const BusinessesById = (props) => {
       <div className='w-full md:h-[100vh] h-[80vh] flex md:flex-row flex-col justify-around pt-36 p-20 mb-10'>
         <div className="shadow-2xl mr-5 md:w-[50%] w-[100%] md:h-[70%] h-[100%]">
           <Image 
-            src={business.image ? business.image : '/images/restaurant-1.jpeg'}
+            src={business.image}
             alt={business.name}
             width={450}
             height={450}

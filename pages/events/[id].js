@@ -1,8 +1,7 @@
 import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
-import { getFeaturedEvents, getEventById, getAllEvents } from '@/helpers/api-util';
+import { getEventById, getAllEvents } from '@/helpers/api-util';
 import Image from 'next/image';
-import React, { Fragment, useState } from 'react';
 
 
 const EventsById = (props) => {
