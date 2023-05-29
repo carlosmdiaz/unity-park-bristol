@@ -20,17 +20,17 @@ const Footer = () => {
         <div className="p-5">
           <ul>
             <Link href="/">
-              <li className="text-white text-xl pb-2 font-semibold hover:text-[#AE895A]">
+              <li className="text-white text-xl pb-2 font-semibold hover:text-[#AE895A] list-none">
                 Home
               </li>
             </Link>
             <Link href="/events">
-              <li className="text-white text-xl pb-2 font-semibold hover:text-[#AE895A]">
+              <li className="text-white text-xl pb-2 font-semibold hover:text-[#AE895A] list-none">
                 Events
               </li>
             </Link>
             <Link href="/gallery">
-              <li className="text-white text-xl pb-2 font-semibold hover:text-[#AE895A]">
+              <li className="text-white text-xl pb-2 font-semibold hover:text-[#AE895A] list-none">
                 Gallery
               </li>
             </Link>
@@ -39,17 +39,17 @@ const Footer = () => {
         <div className="p-5">
           <ul>
             <Link href="/story">
-              <li className="text-white text-xl pb-2 font-semibold hover:text-[#AE895A]">
+              <li className="text-white text-xl pb-2 font-semibold hover:text-[#AE895A] list-none">
                 Story
               </li>
             </Link>
             <Link href="/visit">
-              <li className="text-white text-xl pb-2 font-semibold hover:text-[#AE895A]">
+              <li className="text-white text-xl pb-2 font-semibold hover:text-[#AE895A] list-none">
                 Visit
               </li>
             </Link>
             <Link href="/contact">
-              <li className="text-white text-xl pb-2 font-semibold hover:text-[#AE895A]">
+              <li className="text-white text-xl pb-2 font-semibold hover:text-[#AE895A] list-none">
                 Contact
               </li>
             </Link>
@@ -75,19 +75,19 @@ const Footer = () => {
         <div className="pt-2">
           <ul className="flex md:flex-row flex-col">
             <Link href="/privacy">
-              <li className="text-white pb-2 font-semibold hover:text-[#AE895A]">
+              <li className="text-white pb-2 font-semibold hover:text-[#AE895A] list-none">
                 PRIVACY
               </li>
             </Link>
             <p className="hidden md:flex font-semibold text-white px-4">|</p>
             <Link href="/termsofuse">
-              <li className="text-white pb-2 font-semibold hover:text-[#AE895A]">
+              <li className="text-white pb-2 font-semibold hover:text-[#AE895A] list-none">
                 TERMS OF USE
               </li>
             </Link>
             <p className="hidden md:flex font-semibold text-white px-4">|</p>
             <Link href="/community">
-              <li className="text-white pb-2 font-semibold hover:text-[#AE895A]">
+              <li className="text-white pb-2 font-semibold hover:text-[#AE895A] list-none">
                 COMMUNITY RULES
               </li>
             </Link>

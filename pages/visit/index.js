@@ -4,12 +4,20 @@ import React, { useState } from 'react'
 import { getAllBusinesses } from '@/helpers/api-util';
 import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
+import Head from "next/head";
 
 const VisitPage = (props) => {
   const {businesses} = props;
   console.log(businesses)
   return (
     <div className='flex flex-col justify-between min-h-[100vh]'>
+      <Head>
+        <title>All Businesses</title>
+        <meta
+          name="description"
+          content="A list of all businesses inside of Unity Park Bristol."
+        />
+      </Head>
       <Navbar />
       <div className="w-full flex flex-col items-center justify-between mb-40 md:pl-0 pl-10">
         <h1 className="font-serif text-6xl  md:pl-10 pl-5 pt-32">Explore our Businesses</h1>

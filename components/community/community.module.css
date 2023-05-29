@@ -1,0 +1,26 @@
+.bodyCommunity {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.bodyCommunity h1 {
+  color: #333;
+  font-size: 24px;
+}
+
+.bodyCommunity h2 {
+  color: #333;
+  font-size: 18px;
+}
+
+.bodyCommunity p {
+  margin-bottom: 10px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.subsection {
+  margin-bottom: 10px;
+}

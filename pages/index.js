@@ -5,12 +5,20 @@ import Navbar from "@/components/layout/Navbar";
 import Ribbon from "@/components/swiper/Ribbon";
 import SwiperSlider from "@/components/swiper/SwiperSlider";
 import { getAllEvents } from "@/helpers/api-util";
+import Head from "next/head";
 
 function HomePage(props) {
   const { events } = props;
   console.log(events);
   return (
     <div className="no-scrollbar">
+      <Head>
+        <title>Unity Park Bristol</title>
+        <meta
+          name="description"
+          content="Welcome to Unity Park Bristol, the new and improved Industrial Park, now a Store Park for you. We have anything you need and more. Visit us!"
+        />
+      </Head>
       <Navbar/>
       <Landing/>
       <h1 className="font-serif text-6xl font-bold md:pl-10 pl-5 md:pt-20 pt-8 md:pb-10 pb-0">Events</h1>

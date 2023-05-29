@@ -32,16 +32,16 @@ const Navbar = (props) => {
         <div className="hidden sm:flex justify-evenly">
           <ul className="hidden sm:flex">
             <Link href="/events">
-              <li className="hover:border-b hover:text-[#AE895A] text-xl">Events</li>
+              <li className="hover:border-b hover:text-[#AE895A] text-xl list-none">Events</li>
             </Link>
             <Link href="/gallery">
-              <li className="ml-5 hover:border-b text-xl hover:text-[#AE895A] ">Gallery</li>
+              <li className="ml-5 hover:border-b text-xl hover:text-[#AE895A] list-none">Gallery</li>
             </Link>
             <Link href="/story">
-              <li className="ml-5 hover:border-b text-xl hover:text-[#AE895A]">Story</li>
+              <li className="ml-5 hover:border-b text-xl hover:text-[#AE895A] list-none">Story</li>
             </Link>
             <Link href="/visit">
-              <li className="ml-5 hover:border-b text-xl hover:text-[#AE895A]">Visit</li>
+              <li className="ml-5 hover:border-b text-xl hover:text-[#AE895A] list-none">Visit</li>
             </Link>
           </ul>
           <ul className="hidden sm:flex items-center px-3">

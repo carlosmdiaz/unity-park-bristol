@@ -3,6 +3,7 @@ import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
 import Image from 'next/image';
 import Link from 'next/link';
+import Head from "next/head";
 
 const BusinessesById = (props) => {
     const business = props.selectBusiness;
@@ -17,6 +18,13 @@ const BusinessesById = (props) => {
 
   return (
     <div className='flex flex-col justify-between min-h-[100vh]'>
+      <Head>
+        <title>{business.title}</title>
+        <meta
+          name="description"
+          content={business.description}
+        />
+      </Head>
       <Navbar />
       <div className='w-full h-[100vh] flex md:flex-row flex-col justify-center items-center md:pt-36 md:mt-0 mt-40 md:mb-20 mb-40 md:mx-10'>
         <div className="shadow-2xl mr-5 md:w-[50%] w-[90%] md:h-[80%] h-[40%] md:pl-0 md:ml-0 ml-5">
