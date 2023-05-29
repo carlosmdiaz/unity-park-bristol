@@ -31,7 +31,7 @@ const EventsById = (props) => {
         <div className="flex flex-col md:w-[40%] w-full h-[80%]">
           <div className=''>
             <h1 className="font-serif font-bold md:text-6xl text-5xl md:pl-10 pl-5 md:pt-0 pt-8 ">{event.title}</h1>
-            <h1 className="font-serif font-bold md:text-4xl text-3xl  md:pl-10 pl-5 text-[#AE895A]">{event.date}</h1>
+            <h1 className="font-serif font-bold md:text-4xl text-3xl  md:pl-10 pl-5 pt-4 text-[#AE895A]">{event.date}</h1>
           </div>
           <div className="md:w-[90%] w-[100%] flex justify-center mt-10">
             <p className="font-serif font-bold text-justify text-3xl md:pl-10 pl-0 mx-10">{event.description}</p>
