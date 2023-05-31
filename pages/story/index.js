@@ -19,7 +19,7 @@ const StoryPage = () => {
       <div className="w-full">
         <h1 className="font-serif text-6xl  md:pl-10 pl-5 pt-32">History of Unity Park</h1>
       </div>
-      <div className='w-[100%] h-[100vh] flex justify-center md:mt-[1250px] mt-[3150px] md:mb-[1550px] mb-[3400px]'>
+      <div className='w-[100%] h-[100vh] flex justify-center md:mt-[1350px] mt-[3150px] md:mb-[1550px] mb-[3400px]'>
         <Story />
       </div>
       <Footer />
