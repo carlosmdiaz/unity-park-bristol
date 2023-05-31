@@ -11,10 +11,12 @@ const CommunityPage = () => {
         <meta
           name="description"
           content="A list of all Community Rules on Unity Park Bristol website."
+          charSet="utf-8"
         />
       </Head>
       <Navbar />
-      <div className='h-[100vh] flex justify-center md:mb-[100vh] mb-[2800px] mt-32 md:ml-0 ml-5'>
+      <h1 className="text-6xl font-extrabold mt-32 font-serif ml-10">Community Guidelines</h1>
+      <div className='h-[100vh] flex justify-center md:mb-[100vh] mb-[3400px] mt-5 md:ml-0 ml-7'>
         <CommunityGuidelines />
       </div>
       <Footer />

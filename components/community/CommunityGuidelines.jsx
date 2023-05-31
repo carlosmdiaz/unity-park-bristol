@@ -1,8 +1,7 @@
 
 const CommunityGuidelines = () => {
   return (
-    <div className="flex flex-col items-center m-8 font-serif">
-        <h1 className="text-6xl mb-10">Community Guidelines</h1>
+    <div className="flex flex-col items-center m-8 font-cyreal">
         <div className="w-full h-[10%]">
             <ul>
                 <li className="list-decimal text-4xl">

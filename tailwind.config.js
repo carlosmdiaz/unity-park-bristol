@@ -46,6 +46,10 @@ module.exports = {
       'full': '100%'
 
     },
+    rotate: {
+      '90': '90deg',
+      '270': '270deg',
+    }
   },
   plugins: [],
 }
