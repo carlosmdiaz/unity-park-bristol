@@ -12,15 +12,14 @@ const StoryPage = () => {
         <meta
           name="description"
           content="A resumed history of this ex industrial park now known as Unity Park Bristol."
-          charSet="utf-8"
         />
       </Head>
       <Navbar />
-      <div className="w-full mb-10 md:ml-10 ml-5 pt-32">
-        <h1 className="font-serif text-6xl">History of Unity Park</h1>
-      </div>
-      <div className='w-[100%] h-[100vh] flex justify-center md:mt-[1350px] mt-[3150px] md:mb-[1550px] mb-[3400px]'>
-        <Story />
+      <div className="md:w-full w-[95%] h-[100vh] flex flex-col md:items-center pt-32 md:pb-[3900px] pb-[8400px] md:ml-0 ml-5">
+        <h1 className="font-serif text-6xl md:pl-10 pl-5 pb-5">History of Unity Park</h1>
+        <div>
+          <Story />
+        </div>
       </div>
       <Footer />
     </div>
