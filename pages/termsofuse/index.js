@@ -14,7 +14,7 @@ const TermsOfUsePage = () => {
         />
       </Head>
       <Navbar />
-      <div className='h-[100vh] flex justify-center mb-[7800px] mt-32'>
+      <div className='h-[100vh] flex justify-center md:mb-[7800px] mb-[19300px] mt-32'>
         <TermsOfUse />
       </div>
       <Footer />

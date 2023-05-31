@@ -14,7 +14,7 @@ const PrivacyPage = () => {
         />
       </Head>
       <Navbar />
-      <div className='h-[100vh] flex justify-center mb-[8000px] mt-32'>
+      <div className='h-[90vh] flex flex-col items-center justify-center md:mb-[8000px] mb-[17300px] mt-32'>
         <Privacy />
       </div>
       <Footer />
