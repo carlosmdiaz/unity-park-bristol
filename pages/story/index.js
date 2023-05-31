@@ -16,7 +16,7 @@ const StoryPage = () => {
         />
       </Head>
       <Navbar />
-      <div className="w-full mb-10 md:ml-10 ml-5 mt-32">
+      <div className="w-full mb-10 md:ml-10 ml-5 pt-32">
         <h1 className="font-serif text-6xl">History of Unity Park</h1>
       </div>
       <div className='w-[100%] h-[100vh] flex justify-center md:mt-[1350px] mt-[3150px] md:mb-[1550px] mb-[3400px]'>

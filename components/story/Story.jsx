@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Story = () => {
   return (
-    <div className="md:w-[90%] w-[95%] h-[100vh] flex flex-col items-center justify-center font-cyreal">
+    <div className="md:w-[90%] w-[95%] h-[100%] flex flex-col items-center justify-center font-cyreal">
       <p className="text-2xl md:indent-16 indent-10 w-[90%]">
         Unity Park, the former Bristol Industrial Park, was initially the site
         of the National Rubber Company. Augustus O. Bourn organized the National
