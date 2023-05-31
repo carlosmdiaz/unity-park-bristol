@@ -1,7 +1,7 @@
 
 const CommunityGuidelines = () => {
   return (
-    <div className="m-8 font-serif">
+    <div className="flex flex-col items-center m-8 font-serif">
         <h1 className="text-6xl mb-10">Community Guidelines</h1>
         <div className="w-full h-[10%]">
             <ul>
