@@ -12,11 +12,6 @@ export async function getAllEvents() {
     return events;
 }
 
-export async function getFeaturedEvents() {
-    const allEvents = await getAllEvents();
-    return allEvents.filter((event) => event.isFeatured);
-}
-
 export async function getEventById(id) {
     const allEvents = await getAllEvents();
     return allEvents.find((event) => event.id === id);
@@ -52,3 +47,23 @@ export async function getBusinessById(id) {
   const allBusinesses = await getAllBusinesses();
   return allBusinesses.find((business) => business.id === id);
 }
+
+export async function getAllBlogs() {
+    const response = await fetch('https://unity-park-bristol-default-rtdb.firebaseio.com/Blog.json');
+    const data = await response.json();
+    const blogs = [];
+
+    for (const key in data) {
+        blogs.push({
+            id: key,
+            ...data[key]
+        });
+    }
+    return blogs;
+}
+
+export async function getBlogById(id) {
+    const allBlogs = await getAllBlogs();
+    return allBlogs.find((blog) => blog.id === id);
+}
+

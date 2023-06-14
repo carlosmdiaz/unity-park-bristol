@@ -1,8 +1,8 @@
 import Footer from '@/components/layout/Footer'
-import Navbar from '@/components/layout/Navbar'
 import GallerySwiper from '@/components/gallery/GallerySwiper'
 import React, { useState } from 'react'
 import Head from "next/head";
+import NavbarFix from '@/components/layout/NavbarFix';
 
 const GalleryPage = () => {
   const [hide, setHide] = useState(true);
@@ -15,7 +15,7 @@ const GalleryPage = () => {
           content="A list of images about Unity Park Bristol."
         />
       </Head>
-      <Navbar hide={hide} setHide={setHide}/>
+      <NavbarFix />
       <div className="pb-10">
       <h1 className="font-juniper text-6xl pb-10 md:pl-10 pl-5 pt-8">Gallery</h1>
         <GallerySwiper hide={hide}/>

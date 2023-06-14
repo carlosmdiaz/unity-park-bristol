@@ -1,14 +1,29 @@
-import Footer from '@/components/layout/Footer';
-import Navbar from '@/components/layout/Navbar';
-import { getEventById, getAllEvents } from '@/helpers/api-util';
-import Image from 'next/image';
+import Footer from "@/components/layout/Footer";
+import { getBlogById, getAllBlogs } from "@/helpers/api-util";
+import Image from "next/image";
 import Head from "next/head";
-
+import NavbarFix from "@/components/layout/NavbarFix";
 
 const EventsById = (props) => {
-  const event = props.selectEvent;
+  const blog = props.selectBlog;
+  let blogParagraph = [];
 
-  if (!event) {
+  function getAllBlogParagraph(body) {
+    const data = body;
+    const blogs = [];
+
+    for (const key in data) {
+      console.log(key);
+      console.log(data[key]);
+      blogs.push(data[key]);
+    }
+    console.log(blogs)
+    return blogs;
+  }
+
+  blogParagraph = getAllBlogParagraph(blog.body);
+
+  if (!blog) {
     return (
       <div className="center">
         <p>Loading...</p>
@@ -17,61 +32,71 @@ const EventsById = (props) => {
   }
 
   return (
-    <div className='flex flex-col justify-between min-h-[100vh]'>
+    <div className="flex flex-col justify-between">
       <Head>
-        <title>{event.title}</title>
-        <meta
-          name="description"
-          content={event.description}
-        />
+        <title>{blog.title}</title>
+        <meta name="description" content={blog.description} />
       </Head>
-      <Navbar />
-      <div className='w-full h-[100vh] flex md:flex-row flex-col justify-center items-center md:pt-32 pt-28 md:mb-0 mb-20'>
-        <div className="shadow-2xl mr-5 md:w-[50%] w-[90%] md:h-[80%] h-[40%] md:pl-0 md:ml-0 ml-5">
-          <Image 
-            src={event.image}
-            alt={event.title}
-            width={450}
-            height={450}
-            style={{borderRadius: "5px", width: "100%", height: "100%"}}
-          />
+      <NavbarFix />
+      <div className="w-full flex md:flex-col items-center md:pt-32 pt-28 md:mb-0 mb-20">
+        <div className="flex justify-center w-[95%] h-[85%] border-t-2 border-b-2 border-black">
+          <div className="w-[20%] h-[90%] my-8 shadow-xl">
+            <Image
+              src={blog.image}
+              alt={blog.title}
+              width={1000}
+              height={1000}
+              style={{
+                objectFit: "cover",
+                width: "100%",
+                height: "100%",
+              }}
+            />
+          </div>
+          <div className="w-[60%] ml-10 flex justify-center items-center">
+            <div className="font-serif md:text-6xl ">{blog.title}</div>
+          </div>
         </div>
-        <div className="flex flex-col md:w-[40%] w-full h-[80%]">
-          <div className=''>
-            <h1 className="font-serif font-bold md:text-6xl text-5xl md:pl-10 pl-5 md:pt-0 pt-8 ">{event.title}</h1>
-            <h1 className="font-serif font-bold md:text-4xl text-3xl  md:pl-10 pl-5 pt-4 text-[#AE895A]">{event.date}</h1>
-          </div>
-          <div className="md:w-[90%] w-[100%] flex justify-center mt-10">
-            <p className="font-serif font-bold text-justify text-3xl md:pl-10 pl-0 mx-10">{event.description}</p>
-          </div>
+        <div className="flex flex-col md:w-[90%] w-full h-[80%] mt-10 mb-20">
+          {
+            blogParagraph.map((paragraph) => {
+              console.log(paragraph);
+              return (
+                <div className="text-3xl font-serif">
+                  <div>
+                  {paragraph}
+                  </ div>
+                  <br />
+                </div>
+              )
+            })
+          }
         </div>
       </div>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 export async function getStaticProps(context) {
-  const eventId = context.params.id;
-
-  const event = await getEventById(eventId);
+  const blogId = context.params.id;
+  const blog = await getBlogById(blogId);
 
   return {
     props: {
-      selectEvent: event
+      selectBlog: blog,
     },
-    revalidate: 30,
   };
 }
 
 export async function getStaticPaths() {
-  const events = await getAllEvents();
+  const blogs = await getAllBlogs();
 
-  const paths = events.map(event => ({ params: { id: event.id } }));
+  const paths = blogs.map((blog) => ({ params: { id: blog.id } }));
   return {
     paths: paths,
     fallback: true,
   };
 }
 
-export default EventsById
+export default EventsById;

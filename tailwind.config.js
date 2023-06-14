@@ -49,7 +49,9 @@ module.exports = {
     rotate: {
       '90': '90deg',
       '270': '270deg',
-    }
+    },
+
+    display: ["group-hover"]
   },
   plugins: [],
 }

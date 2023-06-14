@@ -1,15 +1,16 @@
 import InstaList from "@/components/Instagram/InstaList";
+import SocialTitle from "@/components/Instagram/SocialTitle";
 import Landing from "@/components/Landing/Landing";
+import AboutLanding from "@/components/about/AboutLanding";
+import BlogLanding from "@/components/blog/BlogLanding";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
-import Ribbon from "@/components/swiper/Ribbon";
-import SwiperSlider from "@/components/swiper/SwiperSlider";
-import { getAllEvents } from "@/helpers/api-util";
+import { getAllBlogs, getAllBlogParagraph } from "@/helpers/api-util";
 import Head from "next/head";
 
 function HomePage(props) {
-  const { events } = props;
-  console.log(events);
+  const { blogs } = props;
+  console.log(blogs);
   return (
     <div className="no-scrollbar">
       <Head>
@@ -19,14 +20,26 @@ function HomePage(props) {
           content="Welcome to Unity Park Bristol, the new and improved Industrial Park, now a Store Park for you. We have anything you need and more. Visit us!"
         />
       </Head>
-      <Navbar/>
-      <Landing/>
-      <h1 className="font-serif text-6xl font-bold md:pl-10 pl-5 md:pt-20 pt-8 md:pb-10 pb-0">Events</h1>
-      <div className="flex justify-center mb-28">
-        <SwiperSlider events={events}/>
+      <Navbar />
+      <Landing />
+      <div className="translate-y-[-2rem]">
+        <div className="font-serif text-6xl h-[4rem] ml-2">
+          <div className="bg-white w-64 flex justify-center rounded-lg">
+            About
+          </div>
+        </div>
+        <AboutLanding />
+      </div>
+      <div className="flex justify-center mt-20 mb-28 flex-col">
+        <div className="font-serif text-6xl h-[4rem] ml-2 mb-5">
+          <div className="bg-white w-64 flex justify-center rounded-lg">
+            Events
+          </div>
+        </div>
+        <BlogLanding blogs={blogs[0]}/>
       </div>
       <div className="mt-28 mb-16">
-        <Ribbon />
+        <SocialTitle />
       </div>
       {/* <h1 className="font-serif font-bold text-6xl mb-8 pl-10">Check Us On Instagram</h1>
       <div className="mb-10">
@@ -38,15 +51,12 @@ function HomePage(props) {
 }
 
 export async function getStaticProps() {
-  const events = await getAllEvents();
-  console.log(events)
+  const blogs = await getAllBlogs();
   return {
     props: {
-      events: events,
+      blogs: blogs,
     },
-    revalidate: 60,
-  }
+  };
 }
-
 
 export default HomePage;

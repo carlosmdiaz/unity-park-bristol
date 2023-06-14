@@ -1,10 +1,9 @@
 import BusinessItem from '@/components/businesses/BusinessItem';
-import Navbar from '@/components/layout/Navbar'
-import React, { useState } from 'react'
 import { getAllBusinesses } from '@/helpers/api-util';
 import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
 import Head from "next/head";
+import NavbarFix from '@/components/layout/NavbarFix';
 
 const VisitPage = (props) => {
   const {businesses} = props;
@@ -18,7 +17,7 @@ const VisitPage = (props) => {
           content="A list of all businesses inside of Unity Park Bristol."
         />
       </Head>
-      <Navbar />
+      <NavbarFix />
       <div className="w-full flex flex-col items-center justify-between mb-40 md:pl-0 pl-10">
         <h1 className="font-serif text-6xl  md:pl-10 pl-5 pt-32">Explore our Businesses</h1>
         <div className='flex flex-wrap justify-between p-5 mb-10'>

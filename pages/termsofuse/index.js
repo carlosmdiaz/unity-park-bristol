@@ -1,7 +1,7 @@
-import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import TermsOfUse from "@/components/termsofuse/TermsOfUse";
 import Head from "next/head";
+import NavbarFix from "@/components/layout/NavbarFix";
 
 const TermsOfUsePage = () => {
   return (
@@ -13,7 +13,7 @@ const TermsOfUsePage = () => {
           content="A list of all terms of use about Unity Park Bristol's website."
         />
       </Head>
-      <Navbar />
+      <NavbarFix />
       <div className='h-[100vh] flex justify-center md:mb-[9000px] mb-[19300px] mt-32'>
         <TermsOfUse />
       </div>

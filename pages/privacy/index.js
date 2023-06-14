@@ -1,5 +1,6 @@
 import Footer from '@/components/layout/Footer'
 import Navbar from '@/components/layout/Navbar'
+import NavbarFix from '@/components/layout/NavbarFix';
 import Privacy from '@/components/privacy/Privacy'
 import Head from "next/head";
 
@@ -13,7 +14,7 @@ const PrivacyPage = () => {
           content="A list of all policies at Unity Parkl Bristol"
         />
       </Head>
-      <Navbar />
+      <NavbarFix />
       <div className='h-[90vh] flex flex-col items-center justify-center md:mb-[8000px] mb-[17300px] mt-32'>
         <Privacy />
       </div>

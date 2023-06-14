@@ -28,7 +28,7 @@ const InstaList = (props) => {
     if(instaInfo.length === 0) {
       try {
         fetch(
-          "https://instagram-scraper-2022.p.rapidapi.com/ig/posts/?id_user=51605757238",
+          "https://instagram-scraper-2022.p.rapidapi.com/ig/posts/?id_user=60245826781",
           {
             method: "GET",
             headers: {
@@ -42,7 +42,8 @@ const InstaList = (props) => {
             return response.json();
           })
           .then((data) => {
-            setInstaInfo(data.data.user.edge_owner_to_timeline_media.edges);
+            console.log(data);
+            //setInstaInfo(data.data.user.edge_owner_to_timeline_media.edges);
           });
           console.log(instaInfo);
       } catch (error) {

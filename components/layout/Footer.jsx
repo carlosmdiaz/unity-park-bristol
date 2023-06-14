@@ -48,11 +48,11 @@ const Footer = () => {
                 Visit
               </li>
             </Link>
-            <Link href="/contact">
+            {/* <Link href="/contact">
               <li className="text-white text-xl pb-2 font-semibold hover:text-[#AE895A] list-none">
                 Contact
               </li>
-            </Link>
+            </Link> */}
           </ul>
         </div>
         <div className="p-5">

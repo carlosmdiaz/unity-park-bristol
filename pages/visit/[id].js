@@ -1,9 +1,9 @@
 import { getAllBusinesses, getBusinessById } from '@/helpers/api-util';
 import Footer from '@/components/layout/Footer';
-import Navbar from '@/components/layout/Navbar';
 import Image from 'next/image';
 import Link from 'next/link';
 import Head from "next/head";
+import NavbarFix from '@/components/layout/NavbarFix';
 
 const BusinessesById = (props) => {
     const business = props.selectBusiness;
@@ -25,7 +25,7 @@ const BusinessesById = (props) => {
           content={business.description}
         />
       </Head>
-      <Navbar />
+      <NavbarFix />
       <div className='w-full h-[100vh] flex md:flex-row flex-col justify-center items-center md:pt-36 md:mt-0 mt-40 md:mb-20 mb-40 md:mx-10'>
         <div className="shadow-2xl mr-5 md:w-[50%] w-[90%] md:h-[80%] h-[40%] md:pl-0 md:ml-0 ml-5">
           <Image 

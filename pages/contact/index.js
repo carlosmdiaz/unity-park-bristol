@@ -1,7 +1,7 @@
 import Footer from "@/components/layout/Footer";
-import Navbar from "@/components/layout/Navbar";
 import React from "react";
 import Head from "next/head";
+import NavbarFix from "@/components/layout/NavbarFix";
 
 const ContactPage = () => {
   return (
@@ -13,7 +13,7 @@ const ContactPage = () => {
           content="A list of information about how to contact Unity Park Bristol"
         />
       </Head>
-      <Navbar />
+      <NavbarFix />
       <div className="h-[100vh]"></div>
       <Footer />
     </div>

@@ -1,7 +1,7 @@
-import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CommunityGuidelines from "@/components/community/CommunityGuidelines";
 import Head from "next/head";
+import NavbarFix from "@/components/layout/NavbarFix";
 
 const CommunityPage = () => {
   return (
@@ -14,7 +14,7 @@ const CommunityPage = () => {
           charSet="utf-8"
         />
       </Head>
-      <Navbar />
+      <NavbarFix />
       <h1 className="text-6xl font-extrabold mt-32 font-serif ml-10">Community Guidelines</h1>
       <div className='h-[100vh] flex justify-center md:mb-[100vh] mb-[3400px] mt-5 md:ml-0 ml-7'>
         <CommunityGuidelines />

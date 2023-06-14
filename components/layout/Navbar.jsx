@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import classes from "./dropdown.module.css";
 import {
   AiOutlineMenu,
   AiOutlineInstagram,
@@ -8,50 +9,99 @@ import {
   AiOutlineClose,
 } from "react-icons/ai";
 import { BsYelp } from "react-icons/bs";
+import MyDropdown from "./MyDropdown";
+import DropdownMenue from "./DropdownMenue";
 
-const Navbar = (props) => {
+const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  const handleScroll = () => {
+    const currentScrollPos = window.scrollY;
+    if (currentScrollPos > prevScrollPos && currentScrollPos >= 25) {
+      setVisible(false);
+    } else {
+      setVisible(true);
+    }
+
+    setPrevScrollPos(currentScrollPos);
+  };
 
   const handleNav = () => {
     setMenuOpen(!menuOpen);
     console.log(menuOpen);
   };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed w-[100vw] h-24 shadow-xl bg-[#0C1E28] text-white m-0 z-[1000]">
+    
+    <nav
+      className={`fixed w-[100vw] h-24 text-white m-0 z-[1000] h-14 ${visible ? 'top-0 opacity-100 transition-opacity duration-300' : 'opacity-0 transition-opacity duration-500 cursor-default'}`}
+    >
+   
       <div className="flex justify-between items-center h-full w-[100vw] px-4 2xl:px-16">
-        <Link href="/" className="h-full md:p-2 p-5">
+        <Link href="/" className={`${visible ? "h-full md:p-2 p-5" : "h-full md:p-2 p-5 pointer-events-none cursor-default"}`}>
           <Image
-            src='/images/unity-park-logo.png'
+            src="/images/unity-park-nl.png"
             alt="Logo"
             width="400"
             height="100"
-            className="cursor-pointer"
+            className={`${visible ? "cursor-pointer" : "cursor-default"}`}
             priority
+            style={{ width: "300px", height: "100%" }}
           />
         </Link>
+        <div className="h-full w-[180px]">
+          <Image
+            src="/images/unity-park-logo-design3.png"
+            alt="Logo"
+            width="400"
+            height="100"
+            className="h-full"
+            priority
+            style={{ width: "100%", height: "100%", objectFit: "contain"}}
+          />
+        </div>
         <div className="hidden sm:flex justify-evenly">
           <ul className="hidden sm:flex">
-            <Link href="/events">
-              <li className="hover:border-b hover:text-[#AE895A] text-xl list-none">Events</li>
+            <Link href="/events" className={`${visible ? "" : "pointer-events-none cursor-default"}`}>
+              <li className={`${visible ? "hover:border-b transition-all hover:text-[#AE895A] text-xl list-none" : "hover:border-b transition-all text-xl hover:text-[#AE895A] list-none cursor-default"}`}>
+                Events
+              </li>
             </Link>
-            <Link href="/gallery">
-              <li className="ml-5 hover:border-b text-xl hover:text-[#AE895A] list-none">Gallery</li>
+            <Link href="/gallery" className={`${visible ? "" : "pointer-events-none cursor-default"}`}>
+              <li className={`${visible ? "ml-5 hover:border-b transition-all text-xl hover:text-[#AE895A] list-none" : "ml-5 hover:border-b transition-all text-xl hover:text-[#AE895A] list-none cursor-default"}`}>
+                Gallery
+              </li>
             </Link>
-            <Link href="/story">
-              <li className="ml-5 hover:border-b text-xl hover:text-[#AE895A] list-none">Story</li>
-            </Link>
-            <Link href="/visit">
-              <li className="ml-5 hover:border-b text-xl hover:text-[#AE895A] list-none">Visit</li>
+            <div className="ml-5">
+              <MyDropdown visible={visible}/>
+            </div>
+            <Link href="/visit" className={`${visible ? "" : "pointer-events-none cursor-default"}`}>
+              <li className={`${visible ? "ml-5 hover:border-b transition-all text-xl hover:text-[#AE895A] list-none" : "ml-5 hover:border-b transition-all text-xl hover:text-[#AE895A] list-none cursor-default"}`}>
+                Directory
+              </li>
             </Link>
           </ul>
           <ul className="hidden sm:flex items-center px-3">
-            <Link href="https://www.yelp.com" target="_blank" className="pl-1 hover:text-[#AE895A]">
-              <BsYelp size={30} />
-            </Link>
-            <Link href="https://www.instagram.com" target="_blank" className="pl-1 hover:text-[#AE895A]">
+            <Link
+              href="https://www.instagram.com/unityparkbristol/"
+              target="_blank"
+              className={`${visible ? "pl-1 hover:text-[#AE895A]" : "pl-1 pointer-events-none cursor-default"}`}
+            >
               <AiOutlineInstagram size={30} />
             </Link>
-            <Link href="https://www.twitter.com" target="_blank" className="pl-1 hover:text-[#AE895A]">
+            <Link
+              href="https://www.facebook.com/profile.php?id=100093514986419"
+              target="_blank"
+              className={`${visible ? "pl-1 hover:text-[#AE895A]" : "pl-1 pointer-events-none cursor-default"}`}
+            >
               <AiOutlineFacebook size={30} />
             </Link>
           </ul>
@@ -77,7 +127,7 @@ const Navbar = (props) => {
             <Link href="/events">
               <li
                 onClick={() => setMenuOpen(false)}
-                className="py-4 cursor-pointer hover:text-[#AE895A]"
+                className="py-4 cursor-pointer hover:text-[#AE895A] transition-all"
               >
                 Events
               </li>
@@ -85,7 +135,7 @@ const Navbar = (props) => {
             <Link href="/gallery">
               <li
                 onClick={() => setMenuOpen(false)}
-                className="py-4 cursor-pointer hover:text-[#AE895A]"
+                className="py-4 cursor-pointer hover:text-[#AE895A] transition-all"
               >
                 Gallery
               </li>
@@ -93,36 +143,45 @@ const Navbar = (props) => {
             <Link href="/story">
               <li
                 onClick={() => setMenuOpen(false)}
-                className="py-4 cursor-pointer hover:text-[#AE895A]"
+                className="py-4 cursor-pointer hover:text-[#AE895A] transition-all"
               >
                 Story
               </li>
             </Link>
-            <Link href="/visit" >
+            <Link href="/visit">
               <li
                 onClick={() => setMenuOpen(false)}
-                className="py-4 cursor-pointer hover:text-[#AE895A]"
+                className="py-4 cursor-pointer hover:text-[#AE895A] transition-all"
               >
-                Visit
+                Directory
               </li>
             </Link>
           </ul>
         </div>
         <div className="flex flex-row justify-around pt-5 items-center">
-          <Link href="https://www.yelp.com" target="_blank">
-            <BsYelp size={30} className="cursor-ponter hover:text-[#AE895A]" />
+          <Link
+            href="https://www.instagram.com/unityparkbristol/"
+            target="_blank"
+          >
+            <AiOutlineInstagram
+              size={30}
+              className="cursor-pointer hover:text-[#AE895A]"
+            />
           </Link>
-          <Link href="https://www.instagram.com" target="_blank">
-            <AiOutlineInstagram size={30} className="cursor-pointer hover:text-[#AE895A]" />
-          </Link>
-          <Link href="https://www.twitter.com" target="_blank">
-            <AiOutlineFacebook size={30} className="cursor-pointer hover:text-[#AE895A]" />
+          <Link
+            href="https://www.facebook.com/profile.php?id=100093514986419"
+            target="_blank"
+          >
+            <AiOutlineFacebook
+              size={30}
+              className="cursor-pointer hover:text-[#AE895A]"
+            />
           </Link>
         </div>
         <div>
           <Link href="/">
             <Image
-              src='/images/unity-park-logo.png'
+              src="/images/unity-park-logo.png"
               alt="Logo"
               width="205"
               height="75"
