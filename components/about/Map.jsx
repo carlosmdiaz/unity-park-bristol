@@ -4,8 +4,8 @@ import { GoogleMap, LoadScriptNext, Marker } from '@react-google-maps/api'
 const Map = () => {
 
     const containerStyle = {
-        width: '362px',
-        height: '520px',
+        width: '100%',
+        height: '100%',
         borderRadius: '16px'
       };
       

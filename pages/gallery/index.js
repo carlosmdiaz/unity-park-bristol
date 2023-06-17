@@ -7,7 +7,7 @@ import NavbarFix from '@/components/layout/NavbarFix';
 const GalleryPage = () => {
   const [hide, setHide] = useState(true);
   return (
-    <div className='flex flex-col justify-between min-h-[100vh] no-scrollbar'>
+    <div className='flex flex-col justify-between  no-scrollbar'>
       <Head>
         <title>Gallery for Images of Unity Park Bristol</title>
         <meta

@@ -2,9 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import React, { useEffect, useState } from "react";
 import GalleryItem from "./GalleryItem";
 // import required modules
-import { Navigation,} from "swiper";
-
-
+import { Navigation } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
@@ -12,43 +10,46 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
-const images = ['/images/unity-top.jpg','/images/Unity Park Home Page-01.jpg', '/images/Unity Park Home Page-02.jpg', '/images/Unity Park Home Page-03.jpg', '/images/Unity Park Home Page-04.jpg', '/images/Unity Park Home Page-05.jpg', '/images/Unity Park Home Page-06.jpg'];
+const images = [
+  "/images/gallery/Unity Park Home Page-01.jpg",
+  "/images/gallery/Unity Park Home Page-02.jpg",
+  "/images/gallery/Unity Park Home Page-03.jpg",
+  "/images/gallery/Unity Park Home Page-04.jpg",
+  "/images/gallery/Unity Park Home Page-05.jpg",
+  "/images/gallery/Unity Park Home Page-06.jpg",
+  "/images/gallery/Unity Park Home Page-07.jpg",
+  "/images/gallery/Unity Park Home Page-08.jpg",
+  "/images/gallery/Unity Park Home Page-09.jpg",
+  "/images/gallery/Unity Park Home Page-10.jpg",
+  "/images/gallery/Unity Park Home Page-11.jpg",
+  "/images/gallery/Unity Park Home Page-12.jpg",
+  "/images/gallery/Unity Park Home Page-13.jpg",
+  "/images/gallery/Unity Park Home Page-14.jpg",
+  "/images/gallery/Unity Park Home Page-15.jpg",
+  "/images/gallery/Unity Park Home Page-16.jpg",
+];
 
 const GallerySwiper = () => {
-    const [isWidth, setIsWidth] = useState(false)
+  const [isWidth, setIsWidth] = useState(false);
 
-    useEffect(() => {
-        if (window.innerWidth >= 768) {
-            setIsWidth(false);
-        } else {
-            setIsWidth(true)
-        }
-        console.log(isWidth);
-    }, [isWidth]);
+  useEffect(() => {
+    if (window.innerWidth >= 768) {
+      setIsWidth(false);
+    } else {
+      setIsWidth(true);
+    }
+    console.log(isWidth);
+  }, [isWidth]);
 
   return (
-    <div className="w-[100%] h-[80vh] flex flex-col justify-center items-center">
-            <div className="container mx-auto my-10">
-                <Swiper
-                    style={{
-                        "--swiper-navigation-color": "#AE895A",
-                    }}
-                    slidesPerView={1}
-                    rewind={true}
-                    navigation={true}
-                    modules={[Navigation]}
-                    >
-                    {images.map((item) => (
-                        <SwiperSlide className="px-1">
-                            <GalleryItem
-                                image={item}
-                            />
-                        </SwiperSlide>
-                    ))}
-                    </Swiper>
-            </div>
+    <div className="w-[100%] flex flex-col justify-center items-center">
+      <div className="w-full bg-red-200 flex flex-wrap justify-around">
+        {images.map((image) => {
+          return <GalleryItem image={image} />;
+        })}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default GallerySwiper
+export default GallerySwiper;
