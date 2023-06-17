@@ -7,9 +7,8 @@ import NavbarFix from '@/components/layout/NavbarFix';
 
 const VisitPage = (props) => {
   const {businesses} = props;
-  console.log(businesses)
   return (
-    <div className='flex flex-col justify-between min-h-[100vh]'>
+    <div className='flex flex-col justify-between'>
       <Head>
         <title>All Businesses</title>
         <meta
@@ -19,21 +18,24 @@ const VisitPage = (props) => {
       </Head>
       <NavbarFix />
       <div className="w-full flex flex-col items-center justify-between mb-40 md:pl-0 pl-10">
-        <h1 className="font-serif text-6xl  md:pl-10 pl-5 pt-32">Explore our Businesses</h1>
-        <div className='flex flex-wrap justify-between p-5 mb-10'>
-          {
-            businesses.map(business => {
-              return (
-                <Link href={`/visit/${business.id}`}>
-                  <BusinessItem 
-                  key={business.id}
-                  name={business.name}
-                  image={business.image}
-                  />
-                </Link>
-              )
-            })
-          }
+        <div className='w-full'>
+          <h1 className="font-serif text-7xl  md:pl-10 pl-5 pt-32">Explore our Businesses</h1>
+        </div>
+        <div className="w-[80%] flex justify-center item-center">
+            <div className='w-[100%] flex flex-wrap items-center ml-5'>
+              {
+                businesses.map(business => {
+                  return (
+                    <BusinessItem 
+                    key={business.id}
+                    id={business.id}
+                    name={business.name}
+                    image={business.image}
+                    />
+                  )
+                })
+              }
+            </div>
         </div>
       </div>
       <div>
