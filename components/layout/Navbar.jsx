@@ -57,7 +57,7 @@ const Navbar = () => {
             style={{ width: "300px", height: "100%" }}
           />
         </Link>
-        <div className="h-full w-[180px]">
+        <div className="h-full w-[180px] ml-28">
           <Image
             src="/images/unity-park-logo-design3.png"
             alt="Logo"
@@ -89,7 +89,7 @@ const Navbar = () => {
               </li>
             </Link>
           </ul>
-          <ul className="hidden sm:flex items-center px-3">
+          <ul className="hidden sm:flex items-center ml-5">
             <Link
               href="https://www.instagram.com/unityparkbristol/"
               target="_blank"

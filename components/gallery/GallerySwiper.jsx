@@ -27,6 +27,8 @@ const images = [
   "/images/gallery/Unity Park Home Page-14.jpg",
   "/images/gallery/Unity Park Home Page-15.jpg",
   "/images/gallery/Unity Park Home Page-16.jpg",
+  "/images/gallery/Unity Park Home Page-17.jpg",
+  "/images/gallery/Unity Park Home Page-18.jpg",
 ];
 
 const GallerySwiper = () => {
@@ -43,10 +45,13 @@ const GallerySwiper = () => {
 
   return (
     <div className="w-[100%] flex flex-col justify-center items-center">
-      <div className="w-full bg-red-200 flex flex-wrap justify-around">
-        {images.map((image) => {
-          return <GalleryItem image={image} />;
-        })}
+      <div className="w-full flex justify-center items-center">
+        <div className="w-[90%] flex flex-wrap justify-center">
+          {images.map((image, index) => {
+            return <GalleryItem image={image} index={index} images={images}/>;
+          })
+          }
+        </div>
       </div>
     </div>
   );

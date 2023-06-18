@@ -1,18 +1,50 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "react-modal";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 import GalleryItemSwiper from './GalleryItemSwiper';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+import { FreeMode, Navigation, Thumbs, Virtual } from "swiper";
+
+
 
 const GalleryItem = (props) => {
-  const { image } = props;
+  const { image, index, images } = props;
   const [isOpen, setIsOpen] = useState(false);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [photos, setPhotos] = useState([
+    "/images/gallery/Unity Park Home Page-01.jpg",
+    "/images/gallery/Unity Park Home Page-02.jpg",
+    "/images/gallery/Unity Park Home Page-03.jpg",
+    "/images/gallery/Unity Park Home Page-04.jpg",
+    "/images/gallery/Unity Park Home Page-05.jpg",
+    "/images/gallery/Unity Park Home Page-06.jpg",
+    "/images/gallery/Unity Park Home Page-07.jpg",
+    "/images/gallery/Unity Park Home Page-08.jpg",
+    "/images/gallery/Unity Park Home Page-09.jpg",
+    "/images/gallery/Unity Park Home Page-10.jpg",
+    "/images/gallery/Unity Park Home Page-11.jpg",
+    "/images/gallery/Unity Park Home Page-12.jpg",
+    "/images/gallery/Unity Park Home Page-13.jpg",
+    "/images/gallery/Unity Park Home Page-14.jpg",
+    "/images/gallery/Unity Park Home Page-15.jpg",
+    "/images/gallery/Unity Park Home Page-16.jpg",
+    "/images/gallery/Unity Park Home Page-17.jpg",
+    "/images/gallery/Unity Park Home Page-18.jpg",
+  ])
 
   const customStyles = {
     overlay: {
       backgroundColor: "rgba(0, 0, 0, 0.6)",
     },
     content: {
-      top: "50%",
+      width: "90%",
+      height: "80%",
+      top: "55%",
       left: "50%",
       right: "auto",
       bottom: "auto",
@@ -20,24 +52,120 @@ const GalleryItem = (props) => {
       transform: "translate(-50%, -50%)",
     },
   };
+  function handleOpen() {
+    let photosArr = [
+      "/images/gallery/Unity Park Home Page-01.jpg",
+      "/images/gallery/Unity Park Home Page-02.jpg",
+      "/images/gallery/Unity Park Home Page-03.jpg",
+      "/images/gallery/Unity Park Home Page-04.jpg",
+      "/images/gallery/Unity Park Home Page-05.jpg",
+      "/images/gallery/Unity Park Home Page-06.jpg",
+      "/images/gallery/Unity Park Home Page-07.jpg",
+      "/images/gallery/Unity Park Home Page-08.jpg",
+      "/images/gallery/Unity Park Home Page-09.jpg",
+      "/images/gallery/Unity Park Home Page-10.jpg",
+      "/images/gallery/Unity Park Home Page-11.jpg",
+      "/images/gallery/Unity Park Home Page-12.jpg",
+      "/images/gallery/Unity Park Home Page-13.jpg",
+      "/images/gallery/Unity Park Home Page-14.jpg",
+      "/images/gallery/Unity Park Home Page-15.jpg",
+      "/images/gallery/Unity Park Home Page-16.jpg",
+      "/images/gallery/Unity Park Home Page-17.jpg",
+      "/images/gallery/Unity Park Home Page-18.jpg",
+    ];
 
+    if(!isOpen) {
+      console.log(isOpen);
+      photosArr.slice(index,1);
+      photosArr.unshift(image);
+      setPhotos(photosArr);
+      setIsOpen(true);
+      console.log(isOpen);
+    } else if(isOpen){
+      console.log(isOpen);
+      setPhotos(photosArr);
+      setIsOpen(false);
+      console.log(isOpen);
+    }
+  }
+  console.log(isOpen);
+  console.log(photos);
   return (
-    <div className="w-[360px] h-[180px] mt-4 shadow-xl rounded-lg hover:scale-105 transition-all">
+    <div className="w-[30%] h-[250px] mt-4 shadow-xl hover:scale-105 transition-all ml-10 flex flex-grow">
       <Image
         src={image}
         width={400}
+        alt="swiper"
         height={400}
         className="md:object-fill object-cover shadow-lg"
-        style={{ width: "100%", height: "100%", borderRadius: "15px" }}
-        onClick={() => setIsOpen(true)}
+        style={{ width: "100%", height: "100%",}}
+        onClick={handleOpen}
       />
       <Modal
         isOpen={isOpen}
         onRequestClose={() => setIsOpen(false)}
         style={customStyles}
+        ariaHideApp={false}
       >
-        <GalleryItemSwiper />
-        <button onClick={() => setIsOpen(false)}>Close Modal</button>
+        <div className="w-full flex justify-end">
+          <AiOutlineCloseCircle size={40} onClick={handleOpen} className="text-[#0C1E28] hover:text-[#CFAA81] transition-all cursor-pointer"/>
+        </div>
+        <Swiper
+          style={{
+            "--swiper-navigation-color": "#CFAA81",
+            "--swiper-pagination-color": "#fff",
+          }}
+          loop={true}
+          spaceBetween={10}
+          navigation={true}
+          thumbs={{ swiper: thumbsSwiper }}
+          modules={[FreeMode, Navigation, Thumbs, Virtual]}
+          className="w-[85%] h-[75%]"
+        >
+          {
+            photos.map((image) => {
+              return (
+                <SwiperSlide>
+                  <Image
+                    src={image}
+                    alt="swiper"
+                    width={1200}
+                    height={1200}
+                    className="md:object-fill object-cover shadow-lg"
+                    style={{ width: "100%", height: "100%",}} 
+                  />
+                </SwiperSlide>
+              )
+            })
+          }
+        </Swiper>
+        <Swiper
+          onSwiper={setThumbsSwiper}
+          loop={true}
+          spaceBetween={10}
+          slidesPerView={4}
+          freeMode={true}
+          watchSlidesProgress={true}
+          modules={[FreeMode, Navigation, Thumbs]}
+          className="h-[15%] w-[85%] border-t-4 border-white"
+        >
+          {
+            photos.map((image) => {
+              return (
+                <SwiperSlide>
+                  <Image
+                    src={image}
+                    alt="swiper"
+                    width={600}
+                    height={600}
+                    className="md:object-fill object-cover shadow-lg"
+                    style={{ width: "100%", height: "100%",}} 
+                  />
+                </SwiperSlide>
+              )
+            })
+          }
+        </Swiper>
       </Modal>
     </div>
   );
