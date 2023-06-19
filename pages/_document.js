@@ -11,8 +11,9 @@ class MyDocument extends Document {
     return (
       <Html >
         <Head>
-            <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet" />
-            <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet" />
+          <link rel="shortcut icon" href="/favicon/favicon.ico"/>
+          <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet" />
         </Head>
         <body>
           <Main />
