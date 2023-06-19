@@ -21,8 +21,6 @@ const EventsById = (props) => {
     return blogs;
   }
 
-  blogParagraph = getAllBlogParagraph(blog.body);
-
   if (!blog) {
     return (
       <div className="center">
@@ -30,6 +28,8 @@ const EventsById = (props) => {
       </div>
     );
   }
+
+  blogParagraph = getAllBlogParagraph(blog.body);
 
   return (
     <div className="flex flex-col justify-between">
