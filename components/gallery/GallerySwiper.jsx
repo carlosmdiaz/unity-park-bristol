@@ -33,7 +33,7 @@ const images = [
 
 const GallerySwiper = () => {
   const [isWidth, setIsWidth] = useState(false);
-
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     if (window.innerWidth >= 768) {
       setIsWidth(false);
@@ -48,7 +48,7 @@ const GallerySwiper = () => {
       <div className="w-full flex justify-center items-center">
         <div className="w-[90%] flex flex-wrap justify-center">
           {images.map((image, index) => {
-            return <GalleryItem image={image} index={index} images={images}/>;
+            return <GalleryItem key={index} image={image} index={index} images={images} isOpen={isOpen} setIsOpen={setIsOpen}/>;
           })
           }
         </div>
