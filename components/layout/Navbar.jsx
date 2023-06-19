@@ -42,11 +42,11 @@ const Navbar = () => {
   return (
     
     <nav
-      className={`fixed w-[100vw] h-24 text-white m-0 z-[1000] h-14 ${visible ? 'top-0 opacity-100 transition-opacity duration-300' : 'opacity-0 transition-opacity duration-500 cursor-default'}`}
+      className={`fixed w-[100vw] md:h-14 h-[6rem] text-white m-0 z-[1000]  ${visible ? 'top-0 opacity-100 transition-opacity duration-300' : 'opacity-0 transition-opacity duration-500 cursor-default'}`}
     >
    
       <div className="flex justify-between items-center h-full w-[100vw] px-4 2xl:px-16">
-        <Link href="/" className={`${visible ? "h-full md:p-2 p-5" : "h-full md:p-2 p-5 pointer-events-none cursor-default"}`}>
+        <Link href="/" className={`${visible ? "hidden sm:flex h-full " : "hidden sm:flex h-full pointer-events-none cursor-default"}`}>
           <Image
             src="/images/unity-park-nl.png"
             alt="Logo"
@@ -54,10 +54,10 @@ const Navbar = () => {
             height="100"
             className={`${visible ? "cursor-pointer" : "cursor-default"}`}
             priority
-            style={{ width: "300px", height: "100%" }}
+            style={{ width: "100%", height: "100%" }}
           />
         </Link>
-        <div className="h-full w-[180px] ml-28">
+        <div className="hidden sm:flex h-full w-[180px] ">
           <Image
             src="/images/unity-park-logo-design3.png"
             alt="Logo"
@@ -68,6 +68,17 @@ const Navbar = () => {
             style={{ width: "100%", height: "100%", objectFit: "contain"}}
           />
         </div>
+        <Link href='/' className={`${visible ? "sm:hidden h-full mt-5" : "sm:hidden h-full mt-5 pointer-events-none cursor-default"}`}>
+          <Image
+              src="/images/unity-park-bristol-new.png"
+              alt="Logo"
+              width="400"
+              height="100"
+              className={`${visible ? "cursor-pointer" : "cursor-default"}`}
+              priority
+              style={{ width: "800px", height: "100%" }}
+            />
+        </Link>
         <div className="hidden sm:flex justify-evenly">
           <ul className="hidden sm:flex">
             <Link href="/events" className={`${visible ? "" : "pointer-events-none cursor-default"}`}>
@@ -106,8 +117,8 @@ const Navbar = () => {
             </Link>
           </ul>
         </div>
-        <div onClick={handleNav} className="sm:hidden cursor-pointer pl-24">
-          <AiOutlineMenu size={25} />
+        <div onClick={handleNav} className="sm:hidden cursor-pointer pl-10 pt-5">
+          <AiOutlineMenu size={30} />
         </div>
       </div>
       <div
@@ -140,6 +151,14 @@ const Navbar = () => {
                 Gallery
               </li>
             </Link>
+            <Link href="/about">
+              <li
+                onClick={() => setMenuOpen(false)}
+                className="py-4 cursor-pointer hover:text-[#AE895A] transition-all"
+              >
+                About
+              </li>
+            </Link>
             <Link href="/story">
               <li
                 onClick={() => setMenuOpen(false)}
@@ -158,10 +177,11 @@ const Navbar = () => {
             </Link>
           </ul>
         </div>
-        <div className="flex flex-row justify-around pt-5 items-center">
+        <div className="flex flex-row justify-center pt-5 items-center">
           <Link
             href="https://www.instagram.com/unityparkbristol/"
             target="_blank"
+            
           >
             <AiOutlineInstagram
               size={30}
@@ -171,6 +191,7 @@ const Navbar = () => {
           <Link
             href="https://www.facebook.com/profile.php?id=100093514986419"
             target="_blank"
+            className="ml-10"
           >
             <AiOutlineFacebook
               size={30}
@@ -178,10 +199,10 @@ const Navbar = () => {
             />
           </Link>
         </div>
-        <div>
+        <div className="flex justify-center items-center pt-20">
           <Link href="/">
             <Image
-              src="/images/unity-park-logo.png"
+              src="/images/unity-park-logo-new.png"
               alt="Logo"
               width="205"
               height="75"

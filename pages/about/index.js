@@ -16,18 +16,18 @@ const AboutPage = () => {
       </Head>
       <NavbarFix />
       <div className="pt-32 w-full flex justify-center pb-28">
-        <div className="w-[80%]">
+        <div className="w-[80%] text-3xl font-serif ">
           <div>
             <div className="text-6xl font-serif mb-10">About Unity Park</div>
           </div>
-          <div className="text-3xl font-serif">
+          <div className="">
             Welcome to Unity Park, an oasis of community and connection nestled
             in the heart of Bristol, Rhode Island. Situated in the vibrant
             surroundings of Wood Street, Unity Park offers a serene and
             welcoming environment for individuals and families alike.
           </div>
           <br />
-          <div className="text-3xl font-serif">
+          <div className="">
             As you enter this breathtaking space, you'll be greeted by a
             harmonious blend of beautiful architecture and bustling businesses.
             Whether you're seeking a peaceful retreat, a place to gather with
@@ -38,7 +38,7 @@ const AboutPage = () => {
             and indulge in joy, laughter, and relaxation.
           </div>
           <br />
-          <div className="text-3xl font-serif">
+          <div className="">
             Unity Park is a testament to the power of unity, fostering a sense
             of togetherness among residents and promoting a deep appreciation
             for the historical elements surrounding us. Come and experience the

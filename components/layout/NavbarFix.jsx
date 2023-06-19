@@ -88,6 +88,14 @@ const NavbarFix = (props) => {
                 Gallery
               </li>
             </Link>
+            <Link href="/about">
+              <li
+                onClick={() => setMenuOpen(false)}
+                className="py-4 cursor-pointer hover:text-[#AE895A]"
+              >
+                About
+              </li>
+            </Link>
             <Link href="/story">
               <li
                 onClick={() => setMenuOpen(false)}
@@ -101,26 +109,23 @@ const NavbarFix = (props) => {
                 onClick={() => setMenuOpen(false)}
                 className="py-4 cursor-pointer hover:text-[#AE895A]"
               >
-                Visit
+                Directory
               </li>
             </Link>
           </ul>
         </div>
         <div className="flex flex-row justify-around pt-5 items-center">
-          <Link href="https://www.yelp.com" target="_blank">
-            <BsYelp size={30} className="cursor-ponter hover:text-[#AE895A]" />
-          </Link>
-          <Link href="https://www.instagram.com" target="_blank">
+          <Link href="https://www.instagram.com/unityparkbristol/" target="_blank">
             <AiOutlineInstagram size={30} className="cursor-pointer hover:text-[#AE895A]" />
           </Link>
-          <Link href="https://www.twitter.com" target="_blank">
+          <Link href="https://www.facebook.com/profile.php?id=100093514986419" target="_blank">
             <AiOutlineFacebook size={30} className="cursor-pointer hover:text-[#AE895A]" />
           </Link>
         </div>
         <div>
-          <Link href="/">
+          <Link href="/" className="flex justify-center items-center pt-20">
             <Image
-              src='/images/unity-park-logo.png'
+              src='/images/unity-park-logo-new.png'
               alt="Logo"
               width="205"
               height="75"

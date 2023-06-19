@@ -16,7 +16,7 @@ const BusinessesById = (props) => {
     }
 
   return (
-    <div className='flex flex-col justify-between min-h-[100vh]'>
+    <div className='flex flex-col justify-between'>
       <Head>
         <title>{business.title}</title>
         <meta
@@ -25,7 +25,9 @@ const BusinessesById = (props) => {
         />
       </Head>
       <NavbarFix />
-      <BusinessById business={business}/>
+      <div className='w-full md:pt-0 pt-20'>
+        <BusinessById business={business}/>
+      </div>
       <Footer />
     </div>
   )

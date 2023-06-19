@@ -42,7 +42,7 @@ const GalleryItem = (props) => {
       backgroundColor: "rgba(0, 0, 0, 0.6)",
     },
     content: {
-      width: "90%",
+      width: "85%",
       height: "80%",
       top: "55%",
       left: "50%",
@@ -91,7 +91,7 @@ const GalleryItem = (props) => {
   console.log(isOpen);
   console.log(photos);
   return (
-    <div className="w-[30%] h-[250px] mt-4 shadow-xl hover:scale-105 transition-all ml-10 flex flex-grow">
+    <div className="md:w-[30%] w-[95%] md:h-[250px] mt-4 shadow-xl hover:scale-105 transition-all md:ml-10 flex flex-grow">
       <Image
         src={image}
         width={400}
@@ -108,7 +108,7 @@ const GalleryItem = (props) => {
         ariaHideApp={false}
       >
         <div className="w-full flex justify-end">
-          <AiOutlineCloseCircle size={40} onClick={handleOpen} className="text-[#0C1E28] hover:text-[#CFAA81] transition-all cursor-pointer"/>
+          <AiOutlineCloseCircle size={30} onClick={handleOpen} className="text-[#0C1E28] hover:text-[#CFAA81] transition-all cursor-pointer"/>
         </div>
         <Swiper
           style={{
@@ -120,7 +120,7 @@ const GalleryItem = (props) => {
           navigation={true}
           thumbs={{ swiper: thumbsSwiper }}
           modules={[FreeMode, Navigation, Thumbs, Virtual]}
-          className="w-[85%] h-[75%]"
+          className="md:w-[80%] md:h-[80%] h-[80%]"
         >
           {
             photos.map((image) => {
@@ -131,7 +131,7 @@ const GalleryItem = (props) => {
                     alt="swiper"
                     width={1200}
                     height={1200}
-                    className="md:object-fill object-cover shadow-lg"
+                    className="object-fill shadow-lg"
                     style={{ width: "100%", height: "100%",}} 
                   />
                 </SwiperSlide>
@@ -143,11 +143,11 @@ const GalleryItem = (props) => {
           onSwiper={setThumbsSwiper}
           loop={true}
           spaceBetween={10}
-          slidesPerView={4}
+          slidesPerView={7}
           freeMode={true}
           watchSlidesProgress={true}
           modules={[FreeMode, Navigation, Thumbs]}
-          className="h-[15%] w-[85%] border-t-4 border-white"
+          className="h-[15%] md:w-[80%] w-[100%] border-t-4 border-white"
         >
           {
             photos.map((image) => {

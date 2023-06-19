@@ -4,7 +4,7 @@ import Link from "next/link"
 const BusinessItem = (props) => {
     const { name, image, id } = props 
   return (
-    <div className="w-[400px] h-[500px] flex font-serif flex-col justify-center items-center mt-10 hover:border-[1px] hover:shadow-xl bg-slate-100 transition-all border-[#CFAA81] mx-5">
+    <div className="w-[400px] h-[500px] flex font-serif flex-col justify-center items-center mt-10 hover:border-[1px] hover:shadow-xl bg-slate-100 transition-all border-[#CFAA81] md:mx-5">
         <div className="w-[95%] h-[50%] flex justify-center items-center mt-3">
             <Image 
                 src={image}

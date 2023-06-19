@@ -38,6 +38,11 @@ const Footer = () => {
         </div>
         <div className="p-5">
           <ul>
+            <Link href="/about">
+              <li className="text-white text-xl pb-2 font-semibold hover:text-[#AE895A] list-none">
+                About
+              </li>
+            </Link>
             <Link href="/story">
               <li className="text-white text-xl pb-2 font-semibold hover:text-[#AE895A] list-none">
                 Story
@@ -48,11 +53,6 @@ const Footer = () => {
                 Visit
               </li>
             </Link>
-            {/* <Link href="/contact">
-              <li className="text-white text-xl pb-2 font-semibold hover:text-[#AE895A] list-none">
-                Contact
-              </li>
-            </Link> */}
           </ul>
         </div>
         <div className="p-5">

@@ -18,11 +18,11 @@ const Landing = (props) => {
         />
       </div>
       {/* <img src={images[image]} className="blur-sm w-full h-full overflow-hidden object-cover"/> */}
-      <div className="absolute w-3/4 md:top-[20%] top-[30%] flex sm:flex-row flex-col justify-center items-center">
+      <div className="absolute sm:w-3/4 w-full sm:top-[20%] top-[40%] flex flex-row  justify-center items-center">
         <h1 className="text-white md:text-[10rem] text-6xl font-serif underline md:pt-24 drop-shadow-[2px_2px_2px_rgba(0,0,0)] ">UNITY PARK</h1>
       </div>
-      <div className="absolute w-3/4 sm:top-[45%] top-[60%] flex sm:flex-row flex-col justify-center items-center ">
-        <h1 className="text-white md:text-5xl text-2xl font-serif font-bold md:pt-28 drop-shadow-[2px_2px_2px_rgba(0,0,0)]">500 WOOD STREET, BRISTOL RI, 02809</h1>
+      <div className="absolute sm:w-3/4 w-full sm:top-[45%] top-[55%] flex sm:flex-row justify-center items-center sm:pl-0 pl-16">
+        <h1 className="text-white md:text-5xl text-3xl font-serif font-bold md:pt-28 drop-shadow-[2px_2px_2px_rgba(0,0,0)]">500 WOOD STREET, BRISTOL RI, 02809</h1>
       </div>
     </div>
   )

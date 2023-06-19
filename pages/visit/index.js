@@ -17,12 +17,12 @@ const VisitPage = (props) => {
         />
       </Head>
       <NavbarFix />
-      <div className="w-full flex flex-col items-center justify-between mb-40 md:pl-0 pl-10">
+      <div className="w-full flex flex-col items-center justify-between mb-40">
         <div className='w-full'>
-          <h1 className="font-serif text-7xl  md:pl-10 pl-5 pt-32">Explore our Businesses</h1>
+          <h1 className="font-serif text-7xl  md:pl-10 pl-4 pt-32">Explore our Businesses</h1>
         </div>
         <div className="w-[80%] flex justify-center item-center">
-            <div className='w-[100%] flex flex-wrap items-center ml-5'>
+            <div className='w-[100%] flex flex-wrap items-center md:ml-5'>
               {
                 businesses.map(business => {
                   return (

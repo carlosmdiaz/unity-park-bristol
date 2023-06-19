@@ -3,10 +3,10 @@ import React from "react";
 
 const SocialTitle = () => {
   return (
-    <div className="w-screen h-104 flex flex-col justify-evenly items-center font-serif">
-      <div className="w-full h-[80%] flex flex-col justify-evenly items-center">
-        <div className="text-[7rem]">See what we're up to.</div>
-        <div className="flex flex-col justify-center items-center">
+    <div className="w-screen md:h-104 h-[40rem] flex flex-col justify-evenly items-center font-serif">
+      <div className="md:w-full w-[90%] md:h-[80%] h-full flex flex-col justify-evenly items-center">
+        <div className="md:text-[7rem] text-6xl md:text text-center md:mb-0 mb-10">See what we're up to.</div>
+        <div className="flex flex-col justify-center items-center md:text text-center">
           <div className="text-3xl">
             The only thing we love more than making amazing memories is sharing
             them with friends.

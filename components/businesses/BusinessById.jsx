@@ -22,7 +22,7 @@ const BusinessById = (props) => {
     console.log(business);
   return (
     <div className='w-full flex justify-center items-center text-[#0C1E28]'>
-        <div className='w-full h-[100vh] flex md:flex-row flex-col justify-center items-center md:pt-36 md:mt-0 mt-40 md:mb-20 mb-40 md:mx-10'>
+        <div className='w-full flex md:flex-row flex-col justify-center items-center md:pt-36 md:mt-0  md:mb-20 mb-40 md:mx-10'>
         <div className="shadow-2xl mr-5 md:w-[40%] w-[90%] md:h-[60%] h-[40%] md:pl-0 md:ml-0 ml-5">
           <Image 
             src={business.image}
@@ -32,11 +32,11 @@ const BusinessById = (props) => {
             style={{borderRadius: "5px", width: "100%", height: "100%"}}
           />
         </div>
-        <div className="flex flex-col justify-center items-center md:w-[50%] w-[100%] font-serif">
+        <div className="flex flex-col justify-center items-center md:w-[50%] w-[90%] font-serif">
           <div className='w-full'>
             <h1 className="md:text-6xl text-4xl md:pl-10 pl-4 md:pt-0 pt-8 ">{business.name}</h1>
           </div>
-          <div className="md:w-[90%] w-[100%] flex flex-col justify-center mt-10 text-2xl">
+          <div className="md:w-[90%] w-[100%] flex flex-col justify-center mt-10 md:text-2xl text-xl">
             <div className='flex'>
                 <AiOutlinePhone size={30} className='text-[#CFAA81]'/>
                 <div className='ml-5'>{business.phone}</div>
@@ -61,7 +61,7 @@ const BusinessById = (props) => {
                     <div>{`Sunday: ${business.hours.Sunday}`}</div>
                 </div>
             </div>
-            <div className='flex justify-around mt-5 w-[40%]'>
+            <div className='flex justify-around mt-5 md:w-[40%] w-[90%]'>
                 <Link href={business.instagram} target='_blank' className='text-[#CFAA81] hover:text-[#0C1E28] transition-all'>
                     <AiOutlineInstagram size={40} />
                 </Link>

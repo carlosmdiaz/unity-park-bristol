@@ -10,7 +10,7 @@ const EventsPage = (props) => {
   const { blogs } = props;
 
   return (
-    <div className='flex flex-col justify-between min-h-[100vh]'>
+    <div className='flex flex-col justify-between'>
       <Head>
         <title>All Events at Unity Park Bristol</title>
         <meta
@@ -20,7 +20,7 @@ const EventsPage = (props) => {
       </Head>
       <NavbarFix />
       <h1 className="font-serif font-bold text-6xl md:pl-10 pl-5 pt-32">Upcoming Events</h1>
-      <div className="w-full h-[100vh] flex flex-col md:justify-between justify-evenly items-center px-10 mt-10 md:mb-60 mb-[1000px]">
+      <div className="md:w-full w-[90%] flex flex-col md:justify-between justify-evenly items-center md:px-10 mt-10 md:mb-60 md:mb-[1000px] mb-10">
         {
           blogs.map(blog => {
             return (
