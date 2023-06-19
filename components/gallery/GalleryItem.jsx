@@ -48,7 +48,7 @@ const GalleryItem = (props) => {
         onRequestClose={() => setIsOpen(false)}
         style={customStyles}
         ariaHideApp={false}
-        shouldCloseOnOverlayClick={false}
+        
       >
         <div className="w-full flex justify-end">
           <AiOutlineCloseCircle size={30} onClick={() => setIsOpen(false)} className="text-[#0C1E28] hover:text-[#CFAA81] transition-all cursor-pointer"/>
