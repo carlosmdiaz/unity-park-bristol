@@ -13,28 +13,8 @@ import { FreeMode, Navigation, Thumbs, Virtual } from "swiper";
 
 
 const GalleryItem = (props) => {
-  const { image, index, images, setIsOpen, isOpen } = props;
+  const { image, photos, setIsOpen, isOpen } = props;
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  const photos = [
-    "/images/gallery/Unity Park Home Page-01.jpg",
-    "/images/gallery/Unity Park Home Page-02.jpg",
-    "/images/gallery/Unity Park Home Page-03.jpg",
-    "/images/gallery/Unity Park Home Page-04.jpg",
-    "/images/gallery/Unity Park Home Page-05.jpg",
-    "/images/gallery/Unity Park Home Page-06.jpg",
-    "/images/gallery/Unity Park Home Page-07.jpg",
-    "/images/gallery/Unity Park Home Page-08.jpg",
-    "/images/gallery/Unity Park Home Page-09.jpg",
-    "/images/gallery/Unity Park Home Page-10.jpg",
-    "/images/gallery/Unity Park Home Page-11.jpg",
-    "/images/gallery/Unity Park Home Page-12.jpg",
-    "/images/gallery/Unity Park Home Page-13.jpg",
-    "/images/gallery/Unity Park Home Page-14.jpg",
-    "/images/gallery/Unity Park Home Page-15.jpg",
-    "/images/gallery/Unity Park Home Page-16.jpg",
-    "/images/gallery/Unity Park Home Page-17.jpg",
-    "/images/gallery/Unity Park Home Page-18.jpg",
-  ]
 
   const customStyles = {
     overlay: {
@@ -51,6 +31,7 @@ const GalleryItem = (props) => {
       transform: "translate(-50%, -50%)",
     },
   };
+
   return (
     <div className="md:w-[30%] w-[95%] md:h-[250px] mt-4 shadow-xl hover:scale-105 transition-all md:ml-10 flex flex-grow">
       <Image
@@ -85,10 +66,9 @@ const GalleryItem = (props) => {
           className="md:w-[80%] md:h-[80%] h-[80%]"
         >
           {
-            photos.map((image) => {
-              console.log(photos);
+            photos.map((image, index) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={index}>
                   <Image
                     src={image}
                     alt="swiper"
@@ -113,9 +93,9 @@ const GalleryItem = (props) => {
           className="h-[15%] md:w-[80%] w-[100%] border-t-4 border-white"
         >
           {
-            photos.map((image) => {
+            photos.map((image, index) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={index}>
                   <Image
                     src={image}
                     alt="swiper"
