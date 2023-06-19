@@ -72,10 +72,11 @@ const GalleryItem = (props) => {
                   <Image
                     src={image}
                     alt="swiper"
-                    width={1200}
-                    height={1200}
+                    width={600}
+                    height={600}
                     className="object-fill shadow-lg"
                     style={{ width: "100%", height: "100%",}} 
+                    loading="eager"
                   />
                 </SwiperSlide>
               )
@@ -99,8 +100,8 @@ const GalleryItem = (props) => {
                   <Image
                     src={image}
                     alt="swiper"
-                    width={600}
-                    height={600}
+                    width={400}
+                    height={400}
                     className="md:object-fill object-cover shadow-lg"
                     style={{ width: "100%", height: "100%",}} 
                   />
