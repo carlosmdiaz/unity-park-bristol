@@ -61,7 +61,7 @@ const GalleryItem = (props) => {
           loop={true}
           spaceBetween={10}
           navigation={true}
-          thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+          thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null}}
           modules={[FreeMode, Navigation, Thumbs]}
           className="md:w-[80%] md:h-[80%] h-[80%]"
         >
@@ -72,8 +72,8 @@ const GalleryItem = (props) => {
                   <Image
                     src={image}
                     alt="swiper"
-                    width={600}
-                    height={600}
+                    width={1500}
+                    height={1500}
                     className="object-fill shadow-lg"
                     style={{ width: "100%", height: "100%",}} 
                     loading="eager"
@@ -100,8 +100,8 @@ const GalleryItem = (props) => {
                   <Image
                     src={image}
                     alt="swiper"
-                    width={400}
-                    height={400}
+                    width={800}
+                    height={800}
                     className="md:object-fill object-cover shadow-lg"
                     style={{ width: "100%", height: "100%",}} 
                   />
